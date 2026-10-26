@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Brand palette + type, taken from the live sunsure-energy.com (read 26 Oct 2026):
+   Anek Latin; h1 80px/500, h2 52px/500, lead 21px/400, body + nav 18px/400;
+   white text, heading green rgb(6,70,53) = #064635, tints #ddf0ee (mint), #e9f6ff (sky),
+   grey #878787. No red and no black: dark surfaces use brand green.
+   Loaded after style.css; overrides tokens only.
+   ========================================================================== */
+:root{
+  --color-surface-base:#064635;        /* brand heading green, white text 11:1 */
+  --color-surface-strong:#0b5a46;      /* raised dark surface, white text 8:1 */
+  --color-text-secondary:#bcd9cf;      /* replaces #878787 on green (AA) */
+  --color-text-muted:#cfe6df;
+  --color-accent:#7fd1b0;              /* fresh green; green text on it 6:1 */
+  --color-surface-inverse:#ffffff;
+  --color-surface-inverse-subtle:#ddf0ee;   /* brand mint */
+  --color-text-on-inverse:#064635;
+  --color-text-on-inverse-muted:#3d6558;    /* 5.5:1 on mint, 6.7:1 on white */
+  --color-border-on-inverse:#b5d8d0;
+  --color-border-subtle:rgba(255,255,255,.22);
+  --color-data-storage:#ddf0ee;
+  --font-size-display:clamp(48px,5.6vw,80px);   /* 80px at desktop, as live site */
+  --font-size-5xl:clamp(34px,3.6vw,52px);       /* 52px at desktop */
+  --font-size-button:18px;
+  --font-weight-strong:600;
+}
+.inverse{--color-focus:#064635;--color-accent:#0b7a58}
+h1{font-weight:500;line-height:1.07;letter-spacing:normal}
+h2{font-weight:500;line-height:1.11;letter-spacing:normal}
+.lead{font-size:21px}
+.btn{color:#064635;font-weight:600}
+.btn-ghost{color:#fff}
+.btn-ghost:hover{color:#064635}
+.inverse .btn{color:#fff}
+.inverse .btn-ghost{color:#064635;background:transparent;border-color:#064635}
+.inverse .btn-ghost:hover{color:#fff}
+.hl{color:var(--color-surface-inverse-subtle)}
+.play,.step{color:#064635}
+.play:hover{background:#fff;color:#064635;border-color:#fff}
+.skip{color:#064635}
+input[type=range]::-webkit-slider-thumb{background:#fff}
+#voices{background:#e9f6ff}
+#voices .voices::before{color:rgba(11,122,88,.14)}
+/* black overlays and glass -> green */
+.dial{background:rgba(6,70,53,.75)}
+.nav.stuck{background:rgba(6,70,53,.9)}
+.hero-shade{background:linear-gradient(180deg,rgba(6,70,53,.74) 0%,rgba(6,70,53,.62) 45%,rgba(6,70,53,.94) 100%)}
+.stat{background:rgba(6,70,53,.74)}
+.sol.big::before{background:linear-gradient(180deg,rgba(6,70,53,.62),rgba(6,70,53,.94))}
+.ops-shade{background:linear-gradient(90deg,rgba(6,70,53,.94),rgba(6,70,53,.62))}
+.contact-shade{background:linear-gradient(120deg,rgba(6,70,53,.96),rgba(6,70,53,.8))}
+.form{background:rgba(6,70,53,.78)}
+@media (max-width:820px){.mbar{background:rgba(6,70,53,.96)}}
+.mq-btn:hover,.arrows button:hover{color:#064635}
+.inverse .arrows button:hover{color:#fff}
+@media (forced-colors:active){.btn{border-color:ButtonText}}

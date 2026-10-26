@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunsure Energy — About preview</title>
+<meta name="description" content="Standalone preview of the About section (Split Mark). Same CSS and motion code as the Next.js build.">
+<link rel="stylesheet" href="../site/styles/tokens.css">
+<link rel="stylesheet" href="preview.css">
+<link rel="stylesheet" href="../site/components/about/about.css">
+<noscript><style>.about:not(.is-ready) [data-reveal]{visibility:visible!important}</style></noscript>
+<style>.prev-band{height:60vh;display:grid;place-items:center;background:var(--ink-900);color:var(--stone-500);font-size:var(--fs-small);letter-spacing:.12em;text-transform:uppercase}</style>
+</head>
+<body>
+<a class="skip-link" href="#about">Skip to About</a>
+<div class="prev-band" aria-hidden="true">Hero ends here (preview spacer)</div>
+<main id="main" tabindex="-1">
+<section class="about" id="about" data-about aria-labelledby="about-title">
+  <div class="about__top">
+    <div class="about__text">
+      <p class="eyebrow" data-reveal data-eyebrow><span class="eyebrow__tick" data-tick aria-hidden="true"></span><span class="ln"><span class="ln__in">ABOUT SUNSURE</span></span></p>
+      <h2 class="about__title" id="about-title" data-reveal data-title><span class="ln"><span class="ln__in">Powering</span></span><span class="ln"><span class="ln__in">India’s energy</span></span><span class="ln"><span class="ln__in">independence</span></span></h2>
+      <p class="about__body" data-reveal data-body>Founded in 2014, Sunsure Energy is India’s preferred round-the-clock renewable energy (RE-RTC) solutions provider for leading businesses and utilities transitioning to green power. As a leading Independent Power Producer (IPP), Sunsure enables businesses across India to embrace clean energy with ease and confidence through long-term Power Purchase Agreements (PPAs) that offset up to 100% of power use to renewable energy through a mix of solar, wind, and battery storage technologies.</p>
+      <div class="about__cta" data-reveal data-cta><a class="more" href="/about/"><span>Know More</span><span class="more__tick" aria-hidden="true"></span></a></div>
+    </div>
+    <div class="about__art" data-reveal data-art>
+      <div class="art">
+        <div class="art__half art__half--a" data-half="a"><div class="art__in"><img src="../images/powerd_image.webp" width="948" height="870" alt="Wind turbines at sunset and an engineer overlooking solar panels, arranged as the Sunsure mark"></div></div>
+        <div class="art__half art__half--b" data-half="b" aria-hidden="true"><div class="art__in"><img src="../images/powerd_image.webp" width="948" height="870" alt=""><span class="art__blade" data-blade aria-hidden="true"></span></div></div>
+      </div>
+    </div>
+  </div>
+  <ul class="stats" data-reveal data-stats aria-label="Sunsure in numbers">
+    <li class="stat" data-stat><span class="rule" data-rule aria-hidden="true"></span><span class="stat__mark" data-stat-mark aria-hidden="true"></span><p class="stat__num"><span class="sr-only">400+</span><span aria-hidden="true" class="ln"><span class="ln__in"><span data-count="400">400</span><i>+</i></span></span></p><p class="stat__label" data-stat-label>Million USD Raised in Equity Capital</p></li>
+    <li class="stat" data-stat><span class="rule" data-rule aria-hidden="true"></span><span class="stat__mark" data-stat-mark aria-hidden="true"></span><p class="stat__num"><span class="sr-only">80+</span><span aria-hidden="true" class="ln"><span class="ln__in"><span data-count="80">80</span><i>+</i></span></span></p><p class="stat__label" data-stat-label>Happy Industrial Customers</p></li>
+    <li class="stat" data-stat><span class="rule" data-rule aria-hidden="true"></span><span class="stat__mark" data-stat-mark aria-hidden="true"></span><p class="stat__num"><span class="sr-only">800+</span><span aria-hidden="true" class="ln"><span class="ln__in"><span data-count="800">800</span><i>+</i></span></span></p><p class="stat__label" data-stat-label>MW commissioned</p></li>
+  </ul>
+  <div class="backed" data-reveal data-backed>
+    <span class="rule" data-rule aria-hidden="true"></span>
+    <p class="backed__label">We are backed by</p>
+    <!-- TEMPORARY text treatment — replace with the official partners_group.svg when supplied. -->
+    <p class="backed__name" data-placeholder="partners-group-logo">Partners Group</p>
+    <a class="more" href="/about#investor"><span>Know More</span><span class="more__tick" aria-hidden="true"></span></a>
+  </div>
+</section>
+<div class="prev-band" aria-hidden="true">Next section</div>
+</main>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="../site/components/about/about-motion.js"></script>
+<script>
+  (function () {
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && window.Lenis) {
+      var lenis = new Lenis({ lerp: 0.1 }); lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function (t) { lenis.raf(t * 1000); }); gsap.ticker.lagSmoothing(0);
+    }
+    SunsureAbout.initAbout(document.querySelector('[data-about]'), { gsap: gsap, ScrollTrigger: ScrollTrigger });
+  })();
+</script>
+</body>
+</html>

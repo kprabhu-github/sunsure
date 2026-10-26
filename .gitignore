@@ -1,0 +1,21 @@
+# dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+# secrets
+.env
+.env.*
+*.pem
+*.key
+# caches / OS
+.cache/
+.DS_Store
+Thumbs.db
+# delivery zips used to move files between sessions
+_incoming/
+# large generated review screenshots (re-creatable from their HTML boards)
+concepts/B-night-shift.png
+options/section-1.png

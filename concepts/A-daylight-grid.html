@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Concept A: Daylight Grid | Sunsure Energy</title>
+<style>
+@font-face{font-family:SG;src:url(fonts/space-grotesk-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:SG;src:url(fonts/space-grotesk-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:JB;src:url(fonts/jetbrains-mono-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:JB;src:url(fonts/jetbrains-mono-latin-500-normal.woff2);font-weight:500}
+:root{--paper:#f3f2ec;--ink:#0b0b0b;--sig:#ffd400;--line:#0b0b0b;--mute:#55554f}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:500 17px/1.5 SG,system-ui,sans-serif}
+.mono{font-family:JB,monospace;font-weight:400;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+.wrap{max-width:1440px;margin:auto;border-inline:1px solid var(--line);position:relative}
+/* visible 12-col grid */
+.wrap::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),rgba(11,11,11,.08) calc(100%/12 - 1px) calc(100%/12))}
+header{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--line);position:relative;background:var(--paper)}
+header>*{padding:18px 20px;border-right:1px solid var(--line);display:flex;align-items:center}
+header>*:last-child{border-right:0}
+.logo{grid-column:span 3;gap:12px;font:700 24px SG;letter-spacing:-.02em}
+.logo svg{width:34px;height:32px;fill:var(--ink)}
+.n{grid-column:span 1;justify-content:center}
+.n.w{grid-column:span 2}
+.cta{grid-column:span 2;background:var(--ink);color:var(--paper);justify-content:space-between;font:500 14px JB;text-transform:uppercase}
+.cta:hover{background:var(--sig);color:var(--ink)}
+.hero{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--line);position:relative}
+.h-l{grid-column:1/9;padding:44px 28px 36px;border-right:1px solid var(--line);position:relative;overflow:hidden}
+.h-l .mono{display:flex;gap:24px;color:var(--mute)}
+h1{font:700 clamp(70px,10.6vw,164px)/.98 SG;letter-spacing:-.055em;margin:40px 0 30px}
+h1 span{display:block;opacity:0;transform:translateY(40px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+h1 span:nth-child(2){animation-delay:.12s}h1 span:nth-child(3){animation-delay:.24s}
+h1 mark{background:var(--sig);padding:0 .08em;margin-left:-.04em;display:inline-block;line-height:.95}
+@keyframes up{to{opacity:1;transform:none}}
+.lead{max-width:34ch;font-size:22px;line-height:1.3}
+.btns{display:flex;gap:0;margin-top:34px}
+.b{padding:20px 28px;border:1px solid var(--ink);font:500 14px JB;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:inherit;background:var(--sig);transition:transform .2s}
+.b+.b{background:transparent;border-left:0}
+.b:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--ink)}
+.h-r{grid-column:9/13;display:grid;grid-template-rows:auto 1fr auto}
+.panel{padding:20px;border-bottom:1px solid var(--line)}
+.panel h2{font:500 12.5px JB;text-transform:uppercase;letter-spacing:.04em;display:flex;justify-content:space-between;margin-bottom:14px}
+.live{display:inline-flex;gap:8px;align-items:center}
+.live::before{content:"";width:9px;height:9px;border-radius:50%;background:#e5001c;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.2}}
+.bars{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;align-items:end;height:150px}
+.bars i{display:block;background:var(--ink);height:var(--h);transform-origin:bottom;animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*30ms + .5s)}
+.bars i.s{background:var(--sig);outline:1px solid var(--ink)}
+@keyframes grow{from{transform:scaleY(0)}}
+.axis{display:flex;justify-content:space-between;margin-top:8px;color:var(--mute)}
+.vs{padding:24px 20px;background:var(--sig);border-bottom:1px solid var(--line)}
+.vs b{display:block;font:700 72px/.9 SG;letter-spacing:-.05em}
+.vs .r{display:flex;align-items:center;gap:14px;margin-top:10px}
+.track{flex:1;height:14px;border:1px solid var(--ink);position:relative}
+.track i{position:absolute;inset:0 auto 0 0;background:var(--ink);width:var(--w);animation:wid 1.4s .9s cubic-bezier(.65,0,.35,1) both}
+@keyframes wid{from{width:0}}
+.stats{padding:0;display:grid;grid-template-columns:1fr 1fr}
+.stats div{padding:16px 20px;border-bottom:1px solid var(--line)}
+.stats div:nth-child(odd){border-right:1px solid var(--line)}
+.stats b{display:block;font:700 40px/1 SG;letter-spacing:-.03em}
+.tick{overflow:hidden;border-bottom:1px solid var(--line);background:var(--ink);color:var(--paper);position:relative}
+.tick div{display:flex;gap:56px;width:max-content;padding:14px 0;animation:mq 40s linear infinite}
+.tick span::before{content:"■ ";color:var(--sig)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sec{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--line);position:relative}
+.sec>.k{grid-column:1/4;padding:28px 20px;border-right:1px solid var(--line)}
+.sec>.k h2{font:700 44px/1 SG;letter-spacing:-.04em;margin-top:14px}
+.sec>.c{grid-column:4/13}
+.row{display:grid;grid-template-columns:2.2fr 1.4fr 1.4fr 1fr 2.6fr;align-items:center;border-bottom:1px solid var(--line);transition:background .2s}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--sig)}
+.row>*{padding:18px 20px}
+.row.hd{background:var(--ink);color:var(--paper)}
+.row.hd:hover{background:var(--ink)}
+.row .big{font:700 34px/1 SG;letter-spacing:-.03em;text-align:right}
+.row .bar{height:10px;background:var(--ink);width:var(--w);transform-origin:left;animation:wid 1.2s both}
+.sol{display:grid;grid-template-columns:repeat(3,1fr)}
+.sol>div{padding:26px 24px 30px;border-right:1px solid var(--line);position:relative;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
+.sol>div:last-child{border-right:0}
+.sol>div:hover{background:var(--ink);color:var(--paper)}
+.sol>div:hover .plus{transform:rotate(90deg);color:var(--sig)}
+.plus{font:500 64px/1 SG;transition:transform .4s}
+.sol h3{font:700 32px/1.05 SG;letter-spacing:-.03em;margin-bottom:10px}
+.sol p{max-width:30ch}
+footer{padding:40px 28px;display:flex;justify-content:space-between;align-items:end}
+footer b{font:700 clamp(80px,16vw,240px)/.8 SG;letter-spacing:-.07em}
+</style></head><body>
+<div class="wrap">
+<header>
+  <div class="logo"><svg viewBox="0 0 53 50"><path d="M38.9 1.4H19.4L0.6 31.4L18.8 31.2A9.9 9.9 0 0 1 29.5 16Z"/><path d="M38.9 1.4H19.4L0.6 31.4L18.8 31.2A9.9 9.9 0 0 1 29.5 16Z" transform="rotate(180 26.5 25.1)"/></svg>sunsure</div>
+  <div class="n mono">About</div><div class="n w mono">Solutions</div><div class="n w mono">Projects</div><div class="n mono">Hub</div><div class="n mono"></div>
+  <div class="cta">Contact us <span>→</span></div>
+</header>
+
+<section class="hero">
+  <div class="h-l">
+    <div class="mono"><span>Gurugram 28.46°N 77.03°E</span><span>Round-the-clock renewable energy</span></div>
+    <h1><span>Making</span><span>India's</span><span><mark>Power Move</mark></span></h1>
+    <p class="lead">Creating round-the-clock renewable energy assets, powering India's unstoppable growth.</p>
+    <div class="btns"><a class="b" href="#">Explore our solutions</a><a class="b" href="#">See 24-hour power</a></div>
+  </div>
+  <div class="h-r">
+    <div class="panel">
+      <h2><span>Supply mix / 24h</span><span class="live">Illustrative</span></h2>
+      <div class="bars" id="bars"></div>
+      <div class="axis mono"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+    </div>
+    <div class="vs">
+      <span class="mono">Time to power</span>
+      <div class="r"><b>6</b><div style="flex:1"><div class="mono">Sunsure · ~6 months</div><div class="track"><i style="--w:50%"></i></div></div></div>
+      <div class="r" style="margin-top:14px"><b style="font-size:40px;opacity:.5">12</b><div style="flex:1"><div class="mono">Industry · ~12 months</div><div class="track"><i style="--w:100%;background:transparent;border-right:0;outline:0;box-shadow:inset 0 0 0 20px rgba(11,11,11,.35)"></i></div></div></div>
+    </div>
+    <div class="stats">
+      <div><b>800+</b><span class="mono">MW commissioned</span></div>
+      <div><b>8.3+ GW</b><span class="mono">Pipeline</span></div>
+      <div><b>80+</b><span class="mono">Customers</span></div>
+      <div><b>16+</b><span class="mono">States</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="tick mono"><div><span>Dabur</span><span>Lupin</span><span>Jindal Stainless</span><span>Kajaria Ceramics</span><span>Sandoz India</span><span>Emcure</span><span>Inox Air Products</span><span>Haldiram's</span><span>Bisleri</span><span>Sify</span><span>APL Apollo</span><span>Deepak Fertilizers</span><span>Merino Group</span><span>Dabur</span><span>Lupin</span><span>Jindal Stainless</span><span>Kajaria Ceramics</span><span>Sandoz India</span><span>Emcure</span><span>Inox Air Products</span><span>Haldiram's</span><span>Bisleri</span><span>Sify</span><span>APL Apollo</span><span>Deepak Fertilizers</span><span>Merino Group</span></div></div>
+
+<section class="sec">
+  <div class="k"><span class="mono">02 / Assets</span><h2>Spec sheet</h2></div>
+  <div class="c">
+    <div class="row hd mono"><span>Project</span><span>State</span><span>Status</span><span style="text-align:right">MWp</span><span>Relative size</span></div>
+    <div class="row"><span>Solapur 1</span><span class="mono">Maharashtra</span><span class="mono">In build</span><span class="big">150</span><span><div class="bar" style="--w:100%"></div></span></div>
+    <div class="row"><span>Dhule</span><span class="mono">Maharashtra</span><span class="mono">Jul 2025</span><span class="big">120</span><span><div class="bar" style="--w:80%"></div></span></div>
+    <div class="row"><span>Erach Solar, Jhansi</span><span class="mono">Uttar Pradesh</span><span class="mono">Sep 2025</span><span class="big">82.5</span><span><div class="bar" style="--w:55%"></div></span></div>
+    <div class="row"><span>Augasi</span><span class="mono">Uttar Pradesh</span><span class="mono">—</span><span class="big">49</span><span><div class="bar" style="--w:33%"></div></span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="k"><span class="mono">03 / Solutions</span><h2>Pick your stack</h2></div>
+  <div class="c sol">
+    <div><span class="plus">+</span><span><h3>RTC Power</h3><p>Solar, wind and storage combined with energy trading for a steady 24x7 renewable supply.</p></span></div>
+    <div><span class="plus">+</span><span><h3>Energy Storage</h3><p>Battery systems that deliver power during non-generation hours.</p></span></div>
+    <div><span class="plus">+</span><span><h3>Open Access PPA</h3><p>Hybrid, solar or wind under long-term contracts, up to 100% of your consumption.</p></span></div>
+  </div>
+</section>
+<footer><span class="mono">© Sunsure Energy · Concept A</span><b>sunsure</b></footer>
+</div>
+<script>
+const b=document.getElementById('bars');
+for(let i=0;i<24;i++){const h=i+.5,s=Math.round(100*Math.exp(-Math.pow((h-12.5)/3.4,2)));const e=document.createElement('i');e.style.setProperty('--i',i);e.style.setProperty('--h','100%');
+const solar=s,rest=100-s;e.style.background=`linear-gradient(to top,#0b0b0b ${rest}%,#ffd400 ${rest}%)`;e.style.outline='1px solid #0b0b0b';b.appendChild(e)}
+</script></body></html>

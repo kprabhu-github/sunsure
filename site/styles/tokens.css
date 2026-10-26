@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Sunsure Energy — design tokens (single source of truth)
+   Shared by the Next.js site (site/) and the standalone previews (preview/).
+   Brand inputs: Anek Latin; S-mark red #fe3a20 + charcoal (DESIGN.md);
+   forest #064635 / mint #ddf0ee / sky #e9f6ff taken from the live site, used sparingly.
+   ========================================================================== */
+:root {
+  /* — Colour: primitives — */
+  --ink-950: #0e0d0d;
+  --ink-900: #151414;   /* page / hero ground */
+  --ink-800: #242222;   /* raised dark surface (brand brief) */
+  --ink-600: #4a4646;
+  --paper: #ffffff;
+  --paper-warm: #f4f2f2;
+  --stone-300: #d9d5d5;
+  --stone-400: #b8b8b8;
+  --stone-500: #878787; /* AA on ink-900 only */
+  --signal: #fe3a20;    /* S-mark red. Ink text on it = 5.1:1; white on it = large/bold only */
+  --signal-deep: #d92b13;
+  --sun: #ffb020;       /* data only: solar */
+  --forest: #064635;
+  --mint: #ddf0ee;
+  --sky: #e9f6ff;
+
+  /* — Colour: semantic — */
+  --c-bg: var(--ink-900);
+  --c-fg: var(--paper);
+  --c-fg-muted: var(--stone-300);
+  --c-accent: var(--signal);
+  --c-on-accent: var(--ink-900);
+  --c-line: rgba(255, 255, 255, 0.28);
+  --c-focus: #ffffff;
+
+  /* — Type — */
+  --font-sans: var(--font-anek, 'Anek Latin'), 'Anek Latin', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-display: clamp(2.75rem, 1.2rem + 6.6vw, 7.25rem);   /* hero */
+  --fs-h2: clamp(2.125rem, 1.45rem + 2.4vw, 3.5rem);        /* live site: 52px */
+  --fs-h3: clamp(1.5rem, 1.2rem + 1vw, 2.125rem);
+  --fs-lead: clamp(1.0625rem, 0.95rem + 0.45vw, 1.375rem);  /* live site: 21px */
+  --fs-body: 1.125rem;                                      /* live site: 18px */
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+  --lh-display: 1.02;
+  --lh-heading: 1.1;
+  --lh-body: 1.4;
+  --tracking-display: -0.025em;
+  --tracking-label: 0.16em;
+
+  /* — Space (4px base, 8pt rhythm) — */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4.5rem; --s-9: 7rem;
+
+  /* — Grid — */
+  --gutter: clamp(1.25rem, 0.5rem + 3.2vw, 3.5rem);
+  --grid-cols: 12;
+  --grid-gap: clamp(1rem, 2vw, 2rem);
+
+  /* — Brand geometry: the S-mark slant, expressed as a constant angle — */
+  --slant: 16vh;
+
+  /* — Motion — */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-fast: 0.2s;
+  --dur-base: 0.4s;
+  --dur-slow: 0.9s;
+
+  /* — Layers — */
+  --z-hero-media: 0;
+  --z-hero-content: 2;
+  --z-hero-controls: 3;
+  --z-header: 20;
+}
