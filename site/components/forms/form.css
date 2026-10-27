@@ -1,0 +1,18 @@
+.cf { display: grid; gap: 1.1rem; padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--paper-0); border: 1px solid var(--line); }
+.cf__h { margin: 0 0 .5rem; font: 600 var(--fs-h3)/1.1 var(--font-sans); letter-spacing: var(--tracking-heading); }
+.cf__two { display: grid; gap: 1.1rem; }
+.cf__f { display: grid; gap: .35rem; }
+.cf__f label { font: 500 var(--fs-label)/1 var(--font-mono); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--ink-2); }
+.cf__f input, .cf__f textarea { width: 100%; min-height: 48px; padding: .75rem .9rem; background: var(--paper); border: 1px solid var(--line-strong); border-radius: var(--radius); font: 400 1rem/1.4 var(--font-sans); color: var(--ink); transition: border-color .25s, box-shadow .25s; }
+.cf__f textarea { resize: vertical; }
+.cf__f input:focus, .cf__f textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px var(--paper-3), 0 0 0 5px var(--ink); }
+.has-err input:not([type="checkbox"]), .has-err textarea { border-color: var(--red-ink); }
+.cf__e { margin: 0; font-size: var(--fs-small); color: var(--red-ink); }
+.cf__c { display: grid; grid-template-columns: auto 1fr; gap: .1rem .6rem; align-items: center; }
+.cf__c input { width: 22px; height: 22px; accent-color: var(--ink); }
+.cf__c label a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.cf__c .cf__e { grid-column: 1 / -1; }
+.cf__submit { justify-self: start; border: 1px solid var(--ink); }
+.cf__status { margin: 0; min-height: 1.4em; font-size: var(--fs-small); color: var(--ink-2); }
+.cf__note { margin: 0; font: 500 var(--fs-label)/1.5 var(--font-mono); letter-spacing: .04em; color: var(--ink-3); }
+@media (min-width: 640px) { .cf__two { grid-template-columns: 1fr 1fr; } }

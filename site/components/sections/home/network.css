@@ -1,0 +1,33 @@
+.net { background: var(--paper); padding-block: var(--section-y); }
+.net__pin { }
+.net__inner { display: grid; gap: 2.5rem; }
+.net__h { margin: .75rem 0 1.5rem; font: 600 var(--fs-h1)/var(--lh-heading) var(--font-sans); letter-spacing: var(--tracking-heading); }
+.net__steps { display: grid; gap: 1.5rem; }
+.net__stepn { color: var(--red-ink); margin: 0 0 .4rem; }
+.net__text { margin: 0; font-size: var(--fs-lead); line-height: 1.45; color: var(--ink-2); max-width: 34rem; }
+.net__meter { display: none; align-items: center; gap: 1rem; margin-top: 2rem; }
+.net__track { flex: 1; max-width: 14rem; height: 2px; background: var(--line); }
+.net__track i { display: block; height: 100%; background: var(--red); transform-origin: left; transform: scaleX(0); }
+.net__svg { width: 100%; height: auto; display: block; overflow: visible; }
+.net__base path { stroke: var(--line-strong); stroke-width: 1.5; }
+.net__live path { stroke: var(--red); stroke-width: 3.5; stroke-dasharray: 1; stroke-dashoffset: 0; stroke-linecap: round; }
+.net__n { fill: var(--paper-0); stroke: var(--ink); stroke-width: 2; }
+.net__glyph { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.net__t { font: 500 22px var(--font-mono); letter-spacing: .06em; fill: var(--ink); text-transform: uppercase; }
+.net__t--s { font-size: 18px; fill: var(--ink-3); }
+.net__bars { list-style: none; margin: .6rem 0 0; padding: 0; display: grid; gap: .9rem; max-width: 30rem; }
+.net__bars .label b { color: var(--ink); font-weight: 500; margin-left: .5rem; }
+.net__bar { display: block; height: 4px; background: var(--line); margin-top: .4rem; }
+.net__bar i { display: block; height: 100%; background: var(--ink); transform-origin: left; }
+.net__note { margin: 2rem 0 0; }
+
+/* desktop, pinned */
+@media (min-width: 900px) {
+  .net[data-pinned] { padding-block: 0; }
+  .net[data-pinned] .net__pin { height: 100svh; display: flex; align-items: center; }
+  .net[data-pinned] .net__inner { width: 100%; }
+  .net[data-pinned] .net__steps { display: grid; }
+  .net[data-pinned] .net__step { grid-area: 1 / 1; }
+  .net[data-pinned] .net__meter { display: flex; }
+  .net__inner { grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: 4rem; align-items: center; }
+}

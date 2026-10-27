@@ -1,18 +1,25 @@
 @import '../styles/tokens.css';
+@import '../styles/components.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html { background: var(--c-bg); }
-  body { margin: 0; background: var(--c-bg); color: var(--c-fg); font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
-  :focus-visible { outline: 3px solid var(--c-focus); outline-offset: 3px; }
+  html { background: var(--bg); scroll-padding-top: calc(var(--header-h) + 1rem); }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-sans);
+    font-size: var(--fs-body); line-height: var(--lh-body); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--red); color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   main:focus { outline: none; }
 }
-.skip-link { position: absolute; left: var(--gutter); top: -4rem; z-index: 100; padding: .75rem 1.25rem; background: var(--paper); color: var(--ink-900); font-weight: 600; }
-.skip-link:focus { top: 1rem; }
+.skip-link { position: fixed; left: var(--gutter); top: -5rem; z-index: 100; padding: 0.8rem 1.2rem; background: var(--ink); color: var(--paper); font-weight: 600; }
+.skip-link:focus { top: 0.75rem; }
 
-/* Lenis */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-stopped { overflow: hidden; }
+/* Review aid shown on /concept-* only */
+.cswitch { position: fixed; right: 12px; bottom: 12px; z-index: 9999; display: flex; align-items: center; gap: 2px; padding: 4px 4px 4px 12px; background: #111; color: #fff; border-radius: 999px; font: 500 11px/1 ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+.cswitch span { opacity: .6; margin-right: 6px; }
+.cswitch a { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; text-decoration: none; }
+.cswitch a[aria-current="page"] { background: #fff; color: #111; }
+.cswitch a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }

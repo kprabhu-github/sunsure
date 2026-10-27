@@ -1,0 +1,8 @@
+.kh { padding-block: var(--section-y); background: var(--paper); }
+.kh__head { display: grid; gap: 1.5rem; margin-bottom: 2.5rem; }
+.kh__h { margin: 1rem 0 0; font: 600 var(--fs-h1)/var(--lh-heading) var(--font-sans); letter-spacing: var(--tracking-heading); }
+.kh__tabs { display: flex; gap: .5rem; }
+.kh__tab { min-height: 44px; padding: 0 1.2rem; background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius); font: 500 1rem/1 var(--font-sans); color: var(--ink); cursor: pointer; transition: background .3s, color .3s; }
+.kh__tab[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.kh__more { margin: 2rem 0 0; }
+@media (min-width: 900px) { .kh__head { grid-template-columns: 1fr auto; align-items: end; } }

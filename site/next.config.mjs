@@ -1,3 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = { reactStrictMode: true, images: { formats: ['image/avif', 'image/webp'] } };
+/** Trailing slashes match the live WordPress URL structure (e.g. /about/, /solutions/re-100-solutions/). */
+const nextConfig = { reactStrictMode: true, trailingSlash: true };
 export default nextConfig;

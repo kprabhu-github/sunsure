@@ -1,0 +1,11 @@
+# Content gaps and backend dependencies
+- Testimonials: none exist on the live site (homepage shows a labelled placeholder).
+- Partners Group logo SVG: text wordmark used until supplied.
+- Social links: URLs not captured, omitted from footer.
+- Project-specific photography: two representative plant photos reused; labelled on detail pages.
+- Remaining ~35 project slugs (from project-sitemap.xml) have no published text.
+- CSR / community narrative and Sunsure Power Market body: only fetched as paraphrase, not imported (CSR page shows heading + investor stats; Power Market shows heading + published CTA text). Need client copy.
+- Blog/webinar/media full text: links go to the live site; blog category mapping missing.
+- Remaining job listings (7 of 8).
+- Contact form: no endpoint; valid submit opens mailto:info@sunsure.in. Needs a backend/service decision.
+- Legal pages beyond the published privacy bundle: single /privacy-policy/ page with anchors.

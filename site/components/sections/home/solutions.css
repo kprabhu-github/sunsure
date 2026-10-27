@@ -1,0 +1,22 @@
+.sx { padding-block: var(--section-y); background: var(--paper); }
+.sx__head { max-width: 62rem; margin-bottom: clamp(2.5rem, 5vw, 5rem); }
+.sx__h { margin: 1rem 0 1.5rem; font: 600 clamp(2rem, 1.1rem + 3vw, 3.75rem)/var(--lh-heading) var(--font-sans); letter-spacing: var(--tracking-heading); }
+.sx__lead { margin: 0; max-width: 40rem; font-size: var(--fs-lead); color: var(--ink-2); }
+.sx__grid { display: grid; gap: 2rem; }
+.sx__primary { display: grid; gap: .25rem; }
+.sx__ptab { display: flex; align-items: baseline; gap: 1rem; padding: .6rem 0; background: none; border: 0; border-top: 1px solid var(--line); text-align: left; cursor: pointer; color: var(--ink-3); font: 600 var(--fs-h2)/1.05 var(--font-sans); letter-spacing: var(--tracking-heading); transition: color .35s var(--ease-out), padding-left .5s var(--ease-out); }
+.sx__ptab:hover { color: var(--ink); }
+.sx__ptab[aria-selected="true"] { color: var(--ink); padding-left: 1rem; border-top-color: var(--red); box-shadow: inset 3px 0 0 var(--red); }
+.sx__idx { font: 500 var(--fs-label)/1 var(--font-mono); letter-spacing: var(--tracking-label); color: var(--ink-3); }
+.sx__meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem; margin-bottom: 1.25rem; }
+.sx__tag { margin: 0; color: var(--ink-2); max-width: 28rem; }
+.sx__secondary { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.sx__stab { min-height: 44px; padding: 0 1.1rem; background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius); font: 500 1rem/1 var(--font-sans); color: var(--ink); cursor: pointer; transition: background .3s, color .3s, border-color .3s; }
+.sx__stab:hover { border-color: var(--ink); }
+.sx__stab[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.sx__panel { padding: clamp(1.5rem, 3vw, 2.75rem); background: var(--paper-0); border: 1px solid var(--line); min-height: 18rem; }
+.sx__ph { margin: 0 0 1rem; font: 600 var(--fs-h3)/1.1 var(--font-sans); letter-spacing: var(--tracking-heading); }
+.sx__pb { margin: 0 0 1.5rem; max-width: 42rem; font-size: var(--fs-body); color: var(--ink-2); }
+.sx__facts { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; margin: 0 0 1.5rem; }
+.sx__facts dd { margin: .25rem 0 0; font: 600 var(--fs-h3)/1 var(--font-sans); }
+@media (min-width: 900px) { .sx__grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); gap: 5rem; } .sx__ptab { padding: 1.1rem 0; } }

@@ -1,0 +1,13 @@
+.inv { background: var(--deep); color: var(--paper); padding-block: var(--section-y); }
+.inv__grid { display: grid; gap: 3rem; }
+.inv__eyebrow { color: rgba(245,242,235,.72); }
+.inv__name { margin: 1rem 0 2rem; font-weight: 600; font-size: clamp(3rem, 1.2rem + 6vw, 7rem); line-height: .95; letter-spacing: var(--tracking-display); }
+.inv__link { color: var(--paper); }
+.inv__link::after { background: rgba(245,242,235,.4); }
+.inv__ledger { list-style: none; margin: 0; padding: 0; }
+.inv__row { position: relative; display: grid; grid-template-columns: minmax(6rem, 9rem) 1fr; align-items: baseline; gap: 1.5rem; padding: 1.5rem 0; }
+.inv__line { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(245,242,235,.45); transform-origin: left; }
+.inv__row:last-child { border-bottom: 1px solid rgba(245,242,235,.45); }
+.inv__fig { margin: 0; font: 600 clamp(2.25rem, 1.2rem + 3vw, 4rem)/1 var(--font-sans); letter-spacing: -.03em; font-variant-numeric: tabular-nums; color: var(--paper); }
+.inv__lab { margin: 0; font: 500 var(--fs-label)/1.5 var(--font-mono); letter-spacing: var(--tracking-label); text-transform: uppercase; color: rgba(245,242,235,.78); }
+@media (min-width: 900px) { .inv__grid { grid-template-columns: 1fr 1.25fr; gap: 6rem; align-items: end; } .inv__row { grid-template-columns: 11rem 1fr; } }

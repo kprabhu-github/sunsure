@@ -1,0 +1,10 @@
+.ps { padding-block: var(--section-y); background: var(--paper-2); }
+.ps__head { display: grid; gap: 2rem; margin-bottom: 3rem; }
+.ps__h { margin: 1rem 0 0; font: 600 var(--fs-display)/var(--lh-display) var(--font-sans); letter-spacing: var(--tracking-display); }
+.ps__lead { margin: 0 0 1.5rem; max-width: 34rem; font-size: var(--fs-lead); color: var(--ink-2); }
+.ps__stats { list-style: none; margin: 0; padding: 0; display: flex; gap: 3rem; }
+.ps__stats li { display: grid; gap: .3rem; }
+.ps__sn { font: 600 clamp(2.5rem, 1.5rem + 3vw, 4.25rem)/1 var(--font-sans); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.ps__sub { margin: 0 0 1.5rem; }
+.ps__more { margin: 2rem 0 0; }
+@media (min-width: 900px) { .ps__head { grid-template-columns: 1.1fr 1fr; align-items: end; gap: 5rem; } }

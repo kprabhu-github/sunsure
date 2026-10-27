@@ -1,0 +1,11 @@
+.cc { padding-block: var(--section-y); background: var(--paper-2); }
+.cc__grid { display: grid; gap: 3rem; }
+.cc__h { margin: 1rem 0 2.5rem; font: 600 var(--fs-h1)/var(--lh-heading) var(--font-sans); letter-spacing: var(--tracking-heading); }
+.cc__offices { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
+.cc__offices li { padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.cc__offices p { margin: 0 0 .4rem; }
+.cc__offices address { font-style: normal; color: var(--ink-2); max-width: 28rem; }
+.cc__links { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; margin-top: .6rem !important; }
+.cc__links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; }
+.cc__links a:hover { text-decoration-color: var(--red); }
+@media (min-width: 900px) { .cc__grid { grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; } }

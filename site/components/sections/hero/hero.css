@@ -1,0 +1,55 @@
+.hero {
+  --plate-h: max(42svh, 340px);
+  --sag: .12;
+  --nest: .2;
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 100svh; overflow-x: clip; background: var(--paper); color: var(--ink);
+}
+@media (min-width: 900px) { .hero { --plate-h: max(36svh, 300px); --sag: .35; } }
+
+.hero__copy { position: relative; z-index: var(--z-content); width: 100%; max-width: var(--container); margin: 0 auto;
+  padding: calc(var(--header-h) + 1.5rem) var(--gutter) 2rem; margin-bottom: calc(var(--plate-h) * var(--sag) * var(--nest) * -1); }
+@media (max-width: 899px) { .hero__copy { margin-bottom: 0; padding-bottom: 1.75rem; } }
+
+.hero__stage { display: grid; }
+.hero__slide { grid-area: 1 / 1; visibility: hidden; }
+.hero__slide.is-active { visibility: visible; }
+.hero__title { margin: 0; font-weight: 600; font-size: var(--fs-display-xl); line-height: var(--lh-display); letter-spacing: var(--tracking-display); }
+.hero__title .mask-line:last-child { color: var(--ink); }
+.hero__title em { font-style: normal; color: var(--red); }
+.hero__sub { margin: 1.4rem 0 0; max-width: 34rem; font-size: var(--fs-lead); line-height: 1.4; color: var(--ink-2); }
+.hero__sub span { display: block; }
+.hero__cta { margin-top: 1.75rem; }
+
+.hero__plate { position: relative; height: var(--plate-h); flex: none; clip-path: url(#hero-clip); background: var(--paper-3); }
+.hero__img { position: absolute; inset: 0; opacity: 0; }
+.hero__img.is-active { opacity: 1; }
+.hero__par { position: absolute; inset: -8% 0; }
+.hero__par img { object-fit: cover; }
+.hero__shade { position: absolute; inset: auto 0 0 0; height: 55%; background: linear-gradient(to top, rgba(16,19,22,.62), rgba(16,19,22,0)); pointer-events: none; }
+
+.hero__cable { position: absolute; left: 0; right: 0; bottom: 0; height: var(--plate-h); width: 100%; overflow: visible; pointer-events: none; z-index: var(--z-content); }
+.hero__cable path { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.hero__cable-line { stroke: var(--red); stroke-width: 3px; }
+.hero__cable-pulse { stroke: var(--paper-0); stroke-width: 3px; stroke-linecap: round; opacity: .95; }
+
+.hero__ctrl { position: absolute; z-index: var(--z-controls); left: 0; right: 0; bottom: 0; padding: 0 var(--gutter) 1.5rem; max-width: var(--container); margin: 0 auto; display: flex; align-items: center; gap: 1.25rem; color: #fff; }
+.hero__count { font: 500 var(--fs-label)/1 var(--font-mono); letter-spacing: var(--tracking-label); min-width: 4.2rem; }
+.hero__bars { display: flex; gap: .5rem; flex: 0 1 12rem; width: 100%; }
+.hero__bar { position: relative; flex: 1; height: 2px; background: rgba(255,255,255,.4); overflow: hidden; }
+.hero__bar i { position: absolute; inset: 0; background: #fff; transform: scaleX(0); transform-origin: left; }
+.hero__btns { display: flex; gap: .5rem; margin-left: auto; }
+.hero__btn { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(16,19,22,.35); border: 1px solid rgba(255,255,255,.7); border-radius: var(--radius); color: #fff; cursor: pointer; backdrop-filter: blur(6px); transition: background .25s, color .25s, border-color .25s; }
+.hero__btn:hover, .hero__btn:focus-visible { background: var(--red); border-color: var(--red); color: var(--ink); }
+.hero__btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.hero__btn svg { width: 18px; height: 18px; }
+
+/* Pre-intro state (SSR). Removed by the controller once initial values are set. */
+.hero[data-state="pending"] .hero__plate,
+.hero[data-state="pending"] .hero__sub,
+.hero[data-state="pending"] .hero__cta,
+.hero[data-state="pending"] .hero__ctrl,
+.hero[data-state="pending"] .hero__cable { opacity: 0; }
+.hero[data-state="pending"] .mask-line { visibility: hidden; }
+
+@media (max-width: 899px) { .hero__title { font-size: clamp(3rem, 14vw, 5rem); } }

@@ -1,0 +1,16 @@
+.about { padding-block: var(--section-y); background: var(--paper); overflow-x: clip; }
+.about__grid { display: grid; gap: 3rem; }
+.about__copy { position: relative; padding-left: 1.75rem; }
+.about__path { position: absolute; left: 0; top: .25rem; bottom: 0; width: 2px; background: var(--red); transform-origin: top; }
+.about__h { margin: 1rem 0 2rem; font-size: clamp(2.25rem, 1.2rem + 3vw, 4rem); line-height: var(--lh-heading); letter-spacing: var(--tracking-heading); font-weight: 600; }
+.about__p { margin: 0 0 1.5rem; max-width: 40rem; font-size: var(--fs-lead); line-height: 1.5; color: var(--ink-2); }
+.about__media { position: relative; padding-bottom: 6rem; }
+.about__big { width: 82%; }
+.about__small { position: absolute; right: 0; bottom: 0; width: 56%; }
+.about__cap { margin: .6rem 0 0; }
+@media (min-width: 900px) {
+  .about__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6rem; align-items: center; }
+  .about__big { width: 78%; margin-left: auto; }
+  .about__small { right: auto; left: -4%; width: 46%; bottom: -3rem; }
+  .about__media { padding-bottom: 3rem; }
+}
