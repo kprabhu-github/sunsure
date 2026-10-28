@@ -1,0 +1,1 @@
+Open index.html (double-click) in Chrome or Edge. It works offline, no install needed.
